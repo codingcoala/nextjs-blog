@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
-import Alert from '../components/alert';
+
 import { getSortedPostsData } from '../lib/posts';
-import Date from '../components/date';
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -38,25 +37,8 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, I'm <strong>codingCoala</strong>. I've studied business informatics and I'm now working as a product owner.</p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <h2 className={utilStyles.headingLg}>Bored?</h2>
-        <p>Here's some activity from BoredAPI to not let you bored on my page. Try your best ;)!</p>
+        <p>Hello & welcome to my personal website.</p>
+        <p>Here you will find soon more about me! Just be patient :)</p>
       </section>
     </Layout>
   );
